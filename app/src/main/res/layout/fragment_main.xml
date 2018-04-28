@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4eeee"
+    android:paddingTop="50dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".MainActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_smarter" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_title"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:fontFamily="sans-serif"-->
+
+                <!--android:text="SmartER"-->
+                <!--android:textAppearance="?android:textAppearanceLarge"-->
+                <!--android:textStyle="bold" />-->
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@+id/iv_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="10:24 AM" />
+
+        </RelativeLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <LinearLayout
+                android:id="@+id/LL_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/iv_condition_icon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_toStartOf="@+id/tv_city_text"
+                    android:paddingTop="@dimen/activity_vertical_margin" />
+                <!--android:layout_alignParentLeft="true"-->
+
+                <TextView
+                    android:id="@+id/condDescr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/iv_condition_icon"
+                    android:layout_below="@id/iv_condition_icon"
+                    android:layout_gravity="center"
+                    android:text="Icon Description" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_city_text"
+                    style="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="3dp"
+                    android:layout_toRightOf="@id/LL_logo"
+                    android:paddingTop="@dimen/activity_vertical_margin"
+                    android:text="Melbourne, AU"
+                    android:textSize="24dp" />
+
+
+                <TextView
+                    android:id="@+id/tv_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:text="123" />
+
+                <TextView
+                    android:id="@+id/tv_humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_temperature"
+                    android:text="humidity" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wind Speed"
+                    android:id="@+id/tv_wind_speed"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/iv_positive_threshold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_idea_green"
+                android:layout_centerVertical="true"
+                />
+
+            <ImageView
+                android:id="@+id/iv_negative_threshold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_idea_red"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/tv_positive_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_positive_threshold"
+                android:text="Hourly Usage is Low"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textStyle="bold"
+                android:textColor="@color/positiveMessage"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/tv_negative_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_negative_threshold"
+                android:text="Hourly Usage is High"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textStyle="bold"
+                android:textColor="@color/negativeMessage"
+                android:layout_centerVertical="true"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_hourly_use"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Current Hourly Usage: 1.5 kWh"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textStyle="bold"
+                />
+
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
